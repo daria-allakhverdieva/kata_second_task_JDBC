@@ -14,7 +14,6 @@ public class Main {
         user.saveUser("Raphael", "Allakhverdiev", (byte) 1);
         user.saveUser("Roman", "Allakhverdiev", (byte) 25);
         user.saveUser("Elena", "Allakhverdieva", (byte) 30);
-        System.out.println("--------------------------------------------");
         System.out.println(user.getAllUsers());
         user.cleanUsersTable();
         user.dropUsersTable();

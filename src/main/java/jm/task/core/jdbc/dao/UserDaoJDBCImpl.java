@@ -19,7 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
         //language=MySQL
         String sql = """
                 CREATE TABLE pre_project.user(
-                  user_id BIGINT AUTO_INCREMENT PRIMARY KEY ,
+                  user_id SERIAL PRIMARY KEY ,
                   first_name VARCHAR(40) NOT NULL ,
                   last_name VARCHAR(40),
                   user_age TINYINT NOT NULL
@@ -39,7 +39,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void dropUsersTable() {
         //language=MySQL
         String sql = """
-                DROP TABLE IF EXISTS pre_project.user;
+                DROP TABLE IF EXISTS user;
                 """;
         try (Connection connection = Util.openConnection(); Statement statement = connection.createStatement()) {
             statement.execute(sql);
